@@ -90,8 +90,8 @@ public class WeatherFragment extends Fragment {
             JSONObject main = json.getJSONObject("main");
             detailsField.setText(
                     details.getString("description").toUpperCase(Locale.US) +
-                            "\n" + "Humidity: " + main.getString("humidity") + "%" +
-                            "\n" + "Pressure: " + main.getString("pressure") + " hPa");
+                            "\n" + "Влажность: " + main.getString("humidity") + "%" +
+                            "\n" + "Давление: " + main.getString("pressure") + " hPa");
 
             currentTemperatureField.setText(
                     String.format("%.2f", main.getDouble("temp"))+ " ℃");
