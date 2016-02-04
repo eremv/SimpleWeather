@@ -1,6 +1,7 @@
 package com.example.ve.simpleweather;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,19 +14,22 @@ import android.util.Log;
 public class RemoteFetch {
 
     private static final String OPEN_WEATHER_MAP_API =
-            "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";
+            "http://api.openweathermap.org/data/2.5/weather?q=Dnepropetrovsk%20UA&APPID=165ef9c8b9f56561425c68e82310df30";
 
     public static JSONObject getJSON(Context context, String city){
         try {
-            URL url = new URL(String.format(OPEN_WEATHER_MAP_API, city));
+            URL url = new URL(OPEN_WEATHER_MAP_API);
             HttpURLConnection connection =
                     (HttpURLConnection)url.openConnection();
-
+            connection.setRequestProperty("User-Agent","Mozilla/5.0 ( compatible ) ");
+            connection.setRequestProperty("Accept","*/*");
             connection.addRequestProperty("x-api-key",
                     context.getString(R.string.open_weather_maps_app_id));
 
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
+            InputStream inputStream = connection.getInputStream();
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+
 
             StringBuffer json = new StringBuffer(1024);
             String tmp="";
