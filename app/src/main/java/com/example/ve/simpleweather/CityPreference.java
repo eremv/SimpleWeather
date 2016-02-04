@@ -11,10 +11,8 @@ public class CityPreference {
         prefs = activity.getPreferences(Activity.MODE_PRIVATE);
     }
 
-    // If the user has not chosen a city yet, return
-    // Sydney as the default city
     String getCity(){
-        return prefs.getString("city", "Dnepropetrovsk, UA");
+        return prefs.getString("city", "Dnepropetrovsk,%20UA");
     }
 
     void setCity(String city){

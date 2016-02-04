@@ -14,7 +14,7 @@ import android.util.Log;
 public class RemoteFetch {
 
     private static final String OPEN_WEATHER_MAP_API =
-            "http://api.openweathermap.org/data/2.5/weather?q=Dnepropetrovsk%20UA";
+            "http://api.openweathermap.org/data/2.5/weather?q=Dnepropetrovsk%20UA&units=metric";
 
     public static JSONObject getJSON(Context context, String city){
         try {
