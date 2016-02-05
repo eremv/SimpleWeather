@@ -16,8 +16,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_toStartOf="@+id/updated_field"
         android:layout_alignRight="@+id/updated_field"
-        android:layout_alignEnd="@+id/updated_field"
-        android:layout_marginTop="@dimen/abc_action_bar_stacked_max_height" />
+        android:layout_alignEnd="@+id/updated_field" />
 
     <TextView
         android:id="@+id/updated_field"
